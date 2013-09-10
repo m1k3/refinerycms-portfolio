@@ -1,9 +1,6 @@
-<% content_for :body_content_left do %>
-  <%= render :partial => "refinery/portfolio/items/items", :locals => {:items => @items} %>
-  <%= render :partial => "galleries", :locals => {:galleries => @galleries} %>
-<% end %>
+<%= render :partial => "refinery/portfolio/items/items", :locals => {:items => @items} %>
+<%= render :partial => "galleries", :locals => {:galleries => @galleries} %>
 
-<%= render :partial => "/refinery/content_page" %>
 <% content_for :stylesheets, stylesheet_link_tag('refinery/portfolio/frontend') %>
 <% content_for :javascripts, javascript_include_tag('refinery/portfolio') %>
 

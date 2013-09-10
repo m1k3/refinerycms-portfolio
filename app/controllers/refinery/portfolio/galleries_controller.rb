@@ -1,6 +1,7 @@
 module Refinery
   module Portfolio
     class GalleriesController < ::ApplicationController
+      layout 'sidebar_left', only: [:index, :show]
 
       before_filter :find_page
 

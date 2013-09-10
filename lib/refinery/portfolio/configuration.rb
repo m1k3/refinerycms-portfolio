@@ -10,8 +10,10 @@ module Refinery
 
     # Be sure to see http://thiagosf.net/projects/jquery/skitter/ for terrible documentation.
     self.skitter_options = {
+      thumbs: true,
+      labelAnimation: :fixed,
       :interval => 5000,            # Duration of slides in ms
-      :animation => :circles,       # Animation to use
+      :animation => :fade,          # Animation to use
       :numbers => true,             # Use number-based nav
       :dots => false,               # Use dot-based nav
       :navigation => true,          # Show navigation
