@@ -2,7 +2,7 @@
   <%= link_to refinery.portfolio_gallery_path(gallery) do %>
     <% if gallery.cover_image.present? %>
       <div class="image">
-        <%= image_fu gallery.cover_image.image, 
+        <%= image_fu gallery.cover_image.image,
               ::Refinery::Portfolio.cover_image_thumb_size,
               {:title => gallery.cover_image.title} %>
       </div>
