@@ -1,6 +1,7 @@
-  <%- if galleries.present? -%>
-    <ul id="galleries" class='no-list'>
-      <%= render galleries %>
-    </ul>
-  <%- end -%>
-
+<div class='media-wrapper'>
+  <% galleries.in_groups_of(4, false) do |galleries_slice| %>
+    <div class='media-row'>
+      <%= render galleries_slice %>
+    </div>
+  <% end %>
+</div>

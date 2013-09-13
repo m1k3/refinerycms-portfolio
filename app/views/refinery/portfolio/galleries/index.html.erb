@@ -1,5 +1,7 @@
-<%= render :partial => "refinery/portfolio/items/items", :locals => {:items => @items} %>
-<%= render :partial => "galleries", :locals => {:galleries => @galleries} %>
+<div class='media-group-wrapper'>
+  <%= render :partial => "refinery/portfolio/items/items", :locals => {:items => @items} %>
+  <%= render :partial => "galleries", :locals => {:galleries => @galleries} %>
+</div>
 
 <% content_for :stylesheets, stylesheet_link_tag('refinery/portfolio/frontend') %>
 <% content_for :javascripts, javascript_include_tag('refinery/portfolio') %>
