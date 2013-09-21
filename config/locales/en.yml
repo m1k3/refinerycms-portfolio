@@ -2,7 +2,7 @@ en:
   refinery:
     plugins:
       portfolio:
-        title: Portfolio
+        title: Photos
     portfolio:
       admin:
         items:
