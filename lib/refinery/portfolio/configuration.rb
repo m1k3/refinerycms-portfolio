@@ -19,7 +19,8 @@ module Refinery
       :navigation => true,          # Show navigation
       :hideTools => false,          # Hide tools (?)
       :fullscreen => false,         # Use fullscreen (no support, caveat spector)
-      :numbers_align => :center     # Nav placement (left, right, center)
+      :numbers_align => :right,     # Nav placement (left, right, center)
+      width_label: '30%',
       # :structure => ""            # Use this to override the HTML if utterly necessary.
     }
 

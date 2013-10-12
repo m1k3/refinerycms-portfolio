@@ -365,7 +365,6 @@
 				var copy_info_slide = self.box_skitter.find('.info_slide').clone();
 				self.box_skitter.find('.info_slide').remove();
 				self.box_skitter.find('.container_thumbs')
-					.width(self.settings.width_skitter)
 					.append(copy_info_slide);
 				
 				// Scrolling with mouse movement
