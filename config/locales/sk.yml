@@ -4,3 +4,18 @@ sk:
       portfolio:
         title: Fotografie
 
+    portfolio:
+      admin:
+        items:
+          new_multiple:
+            return_to_gallery: 'Naspať do galérie'
+            create_new_image: 'Nahrať nové obrázky'
+          create_multiple:
+            success: 'Obrázky boli úspešne priradené'
+            failure: 'Pridanie obrázkov bolo neúspešné. Uistite sa, že ste vybrali aspoň jeden obrázok.'
+          images:
+            records:
+              add_images: 'Priradiť vybrané obrázky'
+          actions:
+            create_multile: 'Hromadné priradenie obrázkov'
+

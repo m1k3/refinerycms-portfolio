@@ -1,0 +1,22 @@
+<% if searching? %>
+  <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
+<% end %>
+<%= form_tag refinery.create_multiple_portfolio_admin_gallery_items_path(@gallery), class: 'pagination_container' do %>
+  <%= submit_tag t('.add_images', raise: true) %>
+  <%= label_tag :gallery_id, t('gallery', :scope => 'refinery.portfolio.admin.items.item') -%>
+  <%= select_tag :gallery_id, options_from_collection_for_select(::Refinery::Portfolio::Gallery.all, 'id', 'title', @gallery.id) %>
+
+  <% if @images.any? %>
+    <%= render 'refinery/portfolio/admin/items/images/images' %>
+  <% else %>
+    <p>
+      <% unless searching? %>
+        <strong>
+          <%= t('.no_images_yet') %>
+        </strong>
+      <% else %>
+        <%= t('no_results', :scope => 'refinery.admin.search') %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>

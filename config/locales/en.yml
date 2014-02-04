@@ -6,6 +6,15 @@ en:
     portfolio:
       admin:
         items:
+          new_multiple:
+            return_to_gallery: Back to gallery
+            create_new_image: Upload new images
+          create_multiple:
+            success: Images were assigned successfully
+            failure: There was a problem assigning selected images. Please make sure you selected at least one image.
+          images:
+            records:
+              add_images: Assign images
           item:
             gallery: Gallery
             gallery_help: Add this image to a gallery
@@ -17,6 +26,7 @@ en:
             create_new: Add new Image
             reorder: Reorder Images
             reorder_done: Done Reordering Images
+            create_multiple: Assign multiple images
           records:
             no_items_yet: There are no images here.
             sorry_no_results: Sorry! There are no results found.
