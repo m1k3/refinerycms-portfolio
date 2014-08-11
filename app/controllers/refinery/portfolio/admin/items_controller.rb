@@ -8,7 +8,7 @@ module Refinery
                 :order => 'position ASC',
                 :xhr_paging => true
 
-        before_filter :find_gallery, :only => [:index, :new, :new_multiple, :create_multiple]
+        before_filter :find_gallery, :only => [:index, :new, :new_multiple, :create_multiple, :multiply_description]
 
         def index
           if params[:orphaned]
@@ -47,6 +47,19 @@ module Refinery
           else
             redirect_to refinery.new_multiple_portfolio_admin_gallery_items_path(@gallery), alert: t('failure', scope: 'refinery.portfolio.admin.items.create_multiple')
           end
+        end
+
+        def multiply_description
+          description = @gallery.items.where('caption IS NOT NULL').first.try(:caption)
+          if description.present?
+            @gallery.items.each do |item|
+              if item.caption.blank?
+                item.caption = description
+                item.save
+              end
+            end
+          end
+          redirect_to refinery.portfolio_admin_gallery_items_path(@gallery), notice: t('success', scope: 'refinery.portfolio.admin.items.multiply_description')
         end
 
         private

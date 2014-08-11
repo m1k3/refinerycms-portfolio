@@ -19,6 +19,11 @@
     <%= link_to t('.create_multiple'), refinery.new_multiple_portfolio_admin_gallery_items_path(@gallery),
                  :class => "add_icon" %>
   </li>
+
+  <li>
+    <%= link_to t('.multiply_description'), refinery.multiply_description_portfolio_admin_gallery_items_path(@gallery),
+                 :class => "add_icon", method: :post %>
+  </li>
 <% if !searching? && @items.many? %>
   <li>
     <%= link_to t('.reorder', :what => "Images"),

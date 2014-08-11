@@ -12,6 +12,8 @@ en:
           create_multiple:
             success: Images were assigned successfully
             failure: There was a problem assigning selected images. Please make sure you selected at least one image.
+          multiply_description:
+            success: Descriptions were multiplied
           images:
             records:
               add_images: Assign images
@@ -27,6 +29,7 @@ en:
             reorder: Reorder Images
             reorder_done: Done Reordering Images
             create_multiple: Assign multiple images
+            multiply_description: Multiply descriptions
           records:
             no_items_yet: There are no images here.
             sorry_no_results: Sorry! There are no results found.

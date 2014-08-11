@@ -13,9 +13,12 @@ sk:
           create_multiple:
             success: 'Obrázky boli úspešne priradené'
             failure: 'Pridanie obrázkov bolo neúspešné. Uistite sa, že ste vybrali aspoň jeden obrázok.'
+          multiply_description:
+            success: 'Popisy boli skopírované'
           images:
             records:
               add_images: 'Priradiť vybrané obrázky'
           actions:
             create_multile: 'Hromadné priradenie obrázkov'
+            multiply_description: 'Skopírovať popisy'
 
