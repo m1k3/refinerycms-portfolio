@@ -25,18 +25,29 @@
                  :class => "add_icon", method: :post %>
   </li>
 <% if !searching? && @items.many? %>
-  <li>
-    <%= link_to t('.reorder', :what => "Images"),
-                 refinery.portfolio_admin_items_path,
-                 :id => "reorder_action",
-                 :class => "reorder_icon" %>
+  <% if @sort_index %>
+    <li>
+      <%= link_to t('.reorder', :what => "Images"),
+                   refinery.portfolio_admin_gallery_items_path(@gallery),
+                   :id => "reorder_action",
+                   :class => "reorder_icon" %>
 
-    <%= link_to t('.reorder_done', :what => "Images"),
-                 refinery.portfolio_admin_items_path,
-                 :id => "reorder_action_done",
-                 :style => "display: none;",
-                 :class => "reorder_icon" %>
-  </li>
+      <%= link_to t('.reorder_done', :what => "Images"),
+                   refinery.portfolio_admin_gallery_items_path(@gallery),
+                   :id => "reorder_action_done",
+                   :style => "display: none;",
+                   :class => "reorder_icon" %>
+    </li>
+    <li>
+      <%= link_to t('pagination_index', scope: 'refinery.admin'), refinery.portfolio_admin_gallery_items_path(@gallery),
+                   :class => "go_icon" %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t('reorder_index', scope: 'refinery.admin'), refinery.sort_index_portfolio_admin_gallery_items_path(@gallery),
+                   :class => "go_icon" %>
+    </li>
+  <% end %>
 <% end %>
 </ul>
 

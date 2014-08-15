@@ -16,7 +16,7 @@ Refinery::Core::Engine.routes.draw do
           resources :items, :except => [:show] do
             collection do
               post :update_positions, :create_multiple, :multiply_description
-              get :new_multiple
+              get :new_multiple, :sort_index
             end
           end
         end

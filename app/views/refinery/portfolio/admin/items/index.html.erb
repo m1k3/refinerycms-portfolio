@@ -8,9 +8,9 @@
     <% end %>
   <% else %>
     <% if @items.any? %>
-      <%= will_paginate @items %>
+      <%= will_paginate @items if @sort_index != true %>
       <%= render :partial => "sortable_list" %>
-      <%= will_paginate @items %>
+      <%= will_paginate @items if @sort_index != true %>
     <% else %>
       <p>
         <strong>
@@ -25,4 +25,3 @@
   <%= render :partial => 'actions' %>
 </section>
 
-<%= render '/refinery/admin/make_sortable', :tree => false if @items.many? %>

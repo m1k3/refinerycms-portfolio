@@ -8,7 +8,7 @@ module Refinery
                 :order => 'position ASC',
                 :xhr_paging => true
 
-        before_filter :find_gallery, :only => [:index, :new, :new_multiple, :create_multiple, :multiply_description]
+        before_filter :find_gallery, :only => [:index, :new, :new_multiple, :create_multiple, :multiply_description, :sort_index]
 
         def index
           if params[:orphaned]
@@ -60,6 +60,17 @@ module Refinery
             end
           end
           redirect_to refinery.portfolio_admin_gallery_items_path(@gallery), notice: t('success', scope: 'refinery.portfolio.admin.items.multiply_description')
+        end
+
+        def sort_index
+          @sort_index = true
+          if params[:orphaned]
+            @items = Item.orphaned.order('position ASC')
+          elsif params[:gallery_id]
+            @items = @gallery.items.order('position ASC')
+          else
+            redirect_to refinery.portfolio_admin_galleries_path and return
+          end
         end
 
         private
