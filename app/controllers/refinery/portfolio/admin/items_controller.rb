@@ -39,7 +39,7 @@ module Refinery
         def create_multiple
           images = Refinery::Image.where(id: params[:image_ids])
           if images.present?
-            if @gallery.items.create(images.map{|image| { title: '', image_id: image.id }})
+            if @gallery.items.create(images.map{|image| { title: '', image_id: image.id, position: 0 }})
               redirect_to refinery.portfolio_admin_gallery_items_path(@gallery), notice: t('success', scope: 'refinery.portfolio.admin.items.create_multiple')
             else
               redirect_to refinery.new_multiple_portfolio_admin_gallery_items_path(@gallery), alert: t('failure', scope: 'refinery.portfolio.admin.items.create_multiple')
